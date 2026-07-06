@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Clash+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 700;
+  font-family: 'Clash Grotesk', sans-serif;
+  margin-bottom: 16px;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  min-width: 240px;
+  padding: 16px 18px;
+  background: #0a0a0a;
+  border: 1.5px solid #222;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+input::placeholder {
+  color: #555;
+}
+
+input:focus {
+  outline: none;
+  border-color: #E63946;
+  background: #0f0f0f;
+  box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.15);
+}
+
+button {
+  padding: 16px 32px;
+  background: #E63946;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Clash Grotesk', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+button:hover:not(:disabled) {
+  background: #ff5a68;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(230, 57, 70, 0.4);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  background: #0a0a0a;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 60px;
+  border-left: 5px solid #E63946;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.analysis-output {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.8;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.analysis-output p {
+  margin: 14px 0;
+  color: #bbb;
+}
+
+.analysis-output p:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  color: #E63946;
+  margin-bottom: 28px;
+  font-family: 'Clash Grotesk', sans-serif;
+  letter-spacing: 0.5px;
+}
