@@ -18,15 +18,26 @@ function App() {
     setResult(null);
 
     try {
-      const response = await fetch('/api/analyze', {
+      const apiUrl = `${window.location.origin}/api/analyze`;
+      console.log('Calling API:', apiUrl);
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ videoUrl })
       });
 
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
       const data = await response.json();
+      console.log('Response data:', data);
       setResult(data);
     } catch (error) {
+      console.error('Error:', error);
       alert('Error: ' + error.message);
     } finally {
       setLoading(false);
